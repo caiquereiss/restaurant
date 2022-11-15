@@ -9,8 +9,7 @@ export class ListProductController {
 
     try {
       const allProducts = await this.listProductsUseCase.execute();
-      console.log("alalala", allProducts);
-      return response.status(200).json(allProducts);
+      return response.sendStatus(200).json(allProducts);
 
     } catch (error) {
 

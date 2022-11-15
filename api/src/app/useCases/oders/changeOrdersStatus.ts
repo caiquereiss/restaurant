@@ -1,6 +1,6 @@
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
 
-import { Order } from "../../models/Order";
+import { Order } from '../../models/Order';
 
 
 export async function ChangeOdersStatus(req: Request, res: Response) {
@@ -9,9 +9,9 @@ export async function ChangeOdersStatus(req: Request, res: Response) {
     const { order_id } = req.params;
     const { status } = req.body;
 
-    if (!["WAITING", "IN_PRODUCTION", "DONE"].includes(status)) {
+    if (!['WAITING', 'IN_PRODUCTION', 'DONE'].includes(status)) {
       return res.status(400).json({
-        error: "Status should be one of these: WAITING, IN_PRODUCTION, DONE "
+        error: 'Status should be one of these: WAITING, IN_PRODUCTION, DONE '
       });
     }
     await Order.findByIdAndUpdate(order_id, { status });

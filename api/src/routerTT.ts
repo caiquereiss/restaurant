@@ -15,16 +15,16 @@ import { cancelOder } from "./app/useCases/oders/cancelOder";
 
 export const router = Router();
 
-const upload = multer({
-  storage: multer.diskStorage({
-    destination(req, file, callback) {
-      callback(null, path.resolve(__dirname, "..", "uploads"));
-    },
-    filename(req, file, callback) {
-      callback(null, `${Date.now()}-${file.originalname}`);
-    }
-  })
-});
+// const upload = multer({
+//   storage: multer.diskStorage({
+//     destination(req, file, callback) {
+//       callback(null, path.resolve(__dirname, "..", "uploads"));
+//     },
+//     filename(req, file, callback) {
+//       callback(null, `${Date.now()}-${file.originalname}`);
+//     }
+//   })
+// });
 
 // List categories
 router.get("/categories", listCategories);
@@ -39,7 +39,7 @@ router.get("/products", listProducts);
 
 // Create product
 
-router.post("/products", upload.single("image"), createProducts);
+// router.post("/products", upload.single("image"), createProducts);
 
 // Get products by category
 

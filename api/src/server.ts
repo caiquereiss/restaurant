@@ -2,8 +2,8 @@ import express from "express";
 import path from "node:path";
 
 import mongoose from "mongoose";
+import router from "./app/routes";
 
-import { router } from "./router";
 
 mongoose.connect("mongodb://localhost:27017")
   .then(() => {

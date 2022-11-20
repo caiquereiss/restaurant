@@ -12,11 +12,11 @@ export class ChangeOrderStatusController {
 
       await this.changeOrderStatusUseCase.execute(order_id, status);
 
-      return response.sendStatus(204);
+      return response.status(204);
 
     } catch (error) {
       console.log(error);
-      return response.sendStatus(500);
+      return response.status(500);
     }
   }
 

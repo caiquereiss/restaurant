@@ -13,7 +13,7 @@ export class ListOrderController {
       return response.json(AllOrders);
     } catch (error) {
       console.log(error);
-      return response.sendStatus(500);
+      return response.status(500);
     }
   }
 }

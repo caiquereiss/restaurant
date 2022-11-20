@@ -1,5 +1,5 @@
 import { Order } from "../../models/Order";
-
+import { io } from "../../../";
 
 interface IRequest {
   table: string;
@@ -20,6 +20,10 @@ export class CreateOderUseCase {
       table,
       products
     });
+    const orderDetails = await order.populate("products.product");
+    io.emit("orders@new", orderDetails);
     return order;
+
   }
+
 }

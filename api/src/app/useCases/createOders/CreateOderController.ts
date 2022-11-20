@@ -17,9 +17,10 @@ export class CreateOderController {
       });
       return response.status(201).json(order);
 
+
     } catch (error) {
       console.log(error);
-      return response.sendStatus(500);
+      return response.status(500);
     }
   }
 }

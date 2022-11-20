@@ -8,14 +8,14 @@ export class CancelOderController {
   async handle(request: Request, response: Response): Promise<Response> {
     try {
       const { order_id } = request.params;
-
+      console.log("order_id", order_id);
       await this.cancelOrderUseCase.execute(order_id);
 
-      return response.sendStatus(204);
+      return response.status(204);
 
     } catch (error) {
       console.log(error);
-      return response.sendStatus(500);
+      return response.status(500);
     }
   }
 }

@@ -21,7 +21,7 @@ export class CreateProductController {
       return response.status(201).json(product);
 
     } catch (error) {
-      return response.sendStatus(500);
+      return response.status(500);
     }
   }
 }

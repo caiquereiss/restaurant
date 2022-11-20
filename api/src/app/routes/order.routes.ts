@@ -18,6 +18,7 @@ orderRoutes.get("/", (request, response) => {
 
 orderRoutes.delete("/:order_id", (request, response) => {
   cancelOrderController.handle(request, response);
+
 });
 
 orderRoutes.patch("/:order_id", (request, response) => {

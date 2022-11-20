@@ -6,7 +6,6 @@ import productsRoutes from "./product.routes";
 
 const router = Router();
 
-
 router.use("/products", productsRoutes);
 router.use("/orders", orderRoutes);
 router.use("/categories", categoryRoutes);

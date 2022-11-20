@@ -9,12 +9,12 @@ export class ListProductController {
 
     try {
       const allProducts = await this.listProductsUseCase.execute();
-      return response.sendStatus(200).json(allProducts);
+      return response.status(200).json(allProducts);
 
     } catch (error) {
 
       console.log(error);
-      return response.sendStatus(500);
+      return response.status(500);
     }
 
   }

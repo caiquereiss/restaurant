@@ -14,7 +14,7 @@ export class CreateCategoryController {
 
     } catch (error) {
       console.log(error);
-      return response.sendStatus(500);
+      return response.status(500);
     }
   }
 }
